@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mooder</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/png" href="/static/icon-192.png">
+  <meta name="theme-color" content="#0d0d0d">
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="apple-touch-icon" href="/static/icon-192.png">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Mooder</h1>
+      <p class="subtitle">Personal day & mood logger</p>
+    </header>
+
+    <div id="network-banner" class="network-banner"></div>
+
+    <!-- Rating Card -->
+    <div class="card">
+      <div class="card-title">How was your day?</div>
+      <div class="rating-container">
+        <div id="stars" class="stars"></div>
+        <div id="rating-label" class="rating-label">Tap a star to rate</div>
+      </div>
+    </div>
+
+    <!-- Notes Card -->
+    <div class="card">
+      <div class="card-title">Notes (optional)</div>
+      <textarea id="notes" rows="3" placeholder="What happened today? Small wins, moments..."></textarea>
+    </div>
+
+    <!-- Reflection Card -->
+    <div class="card">
+      <div class="card-title">Daily Reflection</div>
+      <div class="reflection-box">
+        <div id="reflection-question" class="reflection-question">What made you smile today?</div>
+        <button id="refresh-question-btn" class="refresh-q-btn">🔄 Another question</button>
+        <textarea id="reflection-answer" rows="3" placeholder="Your reflection..."></textarea>
+      </div>
+    </div>
+
+    <!-- Keywords Card -->
+    <div class="card">
+      <div class="card-title">Keywords</div>
+      <div id="keywords-container" class="keywords-wrap"></div>
+      <div style="display: flex; gap: 8px; margin-top: 8px;">
+        <input type="text" id="custom-keyword" placeholder="Add custom tag...">
+        <button id="add-keyword-btn" class="btn-primary" style="width: auto; padding: 0 16px;">+</button>
+      </div>
+    </div>
+
+    <!-- Save Button -->
+    <button id="save-btn" class="btn-primary" disabled>Save Entry</button>
+
+    <!-- Optional Install PWA button -->
+    <button id="install-btn" class="btn-primary" style="display: none; background-color: var(--bg-secondary); border: 1px solid var(--primary); color: var(--primary);">📲 Install App</button>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

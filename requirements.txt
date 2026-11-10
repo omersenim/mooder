@@ -1,0 +1,18 @@
+# Mooder — Dependencies
+# Install with: pip install -r requirements.txt
+
+# GUI Framework (Flutter-based modern desktop interface)
+flet>=1.1.2
+flet-desktop>=1.1.2
+
+# Background Server & Local Wi-Fi API
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+pydantic>=2.9.0
+
+# QR Code Generation & Imaging (Phone Wi-Fi sync)
+qrcode>=7.4.2
+pillow>=10.0.0
+
+# Single Executable Packaging (Phase 6)
+pyinstaller>=6.11.0

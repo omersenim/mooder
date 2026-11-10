@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# User Private Journal Data & Backups (Keep private thoughts safe)
+daylog_data.json
+mooder_data.json
+*_backup.json
+*_export.json
+*.log
+
+# Distribution / packaging outputs
+dist/
+build/
+*.egg-info/
+*.spec
+
+# IDE & OS metadata
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary and test artifacts
+*.tmp
+.pytest_cache/
