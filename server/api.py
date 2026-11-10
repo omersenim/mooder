@@ -283,6 +283,7 @@ class BackgroundServer:
             host=self.host,
             port=self.port,
             log_level="warning",
+            log_config=None,
             loop="asyncio",
         )
         self._server = uvicorn.Server(config)

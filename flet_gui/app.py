@@ -1,5 +1,7 @@
 """Main desktop window for Mooder — Linear/macOS workspace shell with left sidebar navigation."""
 
+import os
+import sys
 import flet as ft
 
 from core.data import load_data, today_key
@@ -63,7 +65,12 @@ class MooderApp:
             page.window.min_width, page.window.min_height = 720, 580
             page.window.title_bar_hidden = True
             page.window.title_bar_buttons_hidden = True
-            page.window.icon = "assets/icon.ico"
+            base_dir = getattr(sys, "_MEIPASS", os.getcwd())
+            icon_candidate = os.path.join(base_dir, "assets", "icon.ico")
+            if os.path.exists(icon_candidate):
+                page.window.icon = icon_candidate
+            else:
+                page.window.icon = "assets/icon.ico"
         except Exception:
             pass
 

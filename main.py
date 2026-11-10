@@ -5,6 +5,15 @@ and launches the Flet desktop GUI. Exiting the desktop app cleanly stops the ser
 """
 
 import sys
+import io
+
+# In windowed / no-console mode (PyInstaller/flet pack), sys.stdout and sys.stderr are None.
+# Redirect them to dummy buffers so libraries (like uvicorn or print calls) don't crash.
+if sys.stdout is None:
+    sys.stdout = io.StringIO()
+if sys.stderr is None:
+    sys.stderr = io.StringIO()
+
 import flet as ft
 from flet_gui.app import MooderApp
 from server.api import BackgroundServer
